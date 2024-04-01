@@ -48,7 +48,7 @@ class AuthorCitePaper(Base):
     paper = relationship('Paper', backref='author_cite_papers')
     
 ## Load data
-
+"""
 def load_paper_csv(file_path, session):
     df = pd.read_csv(file_path)
     for index,row in df.iterrows():
@@ -84,3 +84,4 @@ def load_author_cite_paper_csv(file_path, session):
         session.add(new_author_paper)
     session.flush()
     session.commit()    
+"""
