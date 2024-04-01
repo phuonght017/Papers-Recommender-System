@@ -15,4 +15,5 @@ SQLAlchemy==2.0.28
 typing_extensions==4.10.0
 virtualenv==20.25.1
 Werkzeug==3.0.1
+pandas
 Gunicorn
