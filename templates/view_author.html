@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="../static/images/small-logo.ico">
+    <title>SciPaper | Author</title>
+    <link rel="stylesheet" type="text/css" href="../static/style.css">
+</head>
+<body>
+    <header>
+        {% include '_navbar.html' %}
+    </header>
+    <main>
+        <div class="profile-containter">
+            <div class="avatar">
+                <img src="../static/images/avatar.jpg" alt="avatar">
+            </div>
+            <div class="profile">
+                <h1> {{ author.name }} </h1> 
+                <h3> Papers: {{ count }}</h3>
+            </div>
+        </div>
+        <div class="card-list">
+            {% for paper in papers %}
+                <div class="card">
+                    <img  class="card-image" src="../static/images/posters/poster ({{loop.index % 12}}).jpg" alt="poster">
+                    <div class="card-header">
+                        <a href="/papers/{{paper.id}}"> {{paper.title}} </a>
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-meta"> -- {{paper.published_year}} -- </div>
+                    </div>
+                </div>
+            {% endfor %}            
+        </div>
+    </main>    
+    {% include '_footer.html' %}
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="../static/images/small-logo.ico">
+    <title>SciPaper | Papers</title>
+    <link rel="stylesheet" type="text/css" href="../static/style.css">
+</head>
+<body>
+    <header>
+        {% include '_navbar.html' %}
+    </header>
+    <main>
+        <!-- filter-form -->
+        <form id="paper-filter-form" class="form-container">
+            <label for="from_year">Published From:</label>
+            <select id="from_year" name="from-year">
+                <option value="None"> All </option>
+              {% for year in range(2005, 1950, -1) %}
+                <option value="{{ year }}">{{ year }}</option>
+              {% endfor %}
+            </select>
+            <label for="to_year">To:</label>
+            <select id="to_year" name="to-year">
+                <option value="None"> All </option>
+              {% for year in range(2005, 1950, -1) %}
+                <option value="{{ year }}">{{ year }}</option>
+              {% endfor %}
+            </select>
+            <button type="submit">Filter</button>
+        </form>
+        <!-- papers-list -->
+        <div id="papersList" class="card-list">
+          {% for paper in papers[1:31] %}
+            <div class="card">
+              <img  class="card-image" src="../static/images/posters/poster ({{loop.index % 12}}).jpg" alt="poster">
+              <div class="card-header">
+                <a href="/papers/{{paper.id}}"> {{paper.title}} </a>
+              </div>
+              <div class="card-footer">
+                <div class="card-meta"> -- {{paper.published_year}} -- </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+        <div class="pages-button">
+          <button id="prev-btn" disabled> << Previous </button>
+          <button id="next-btn"> Next >> </button>
+        </div>
+    </main>
+
+    {% include '_footer.html' %}
+    <script>
+        // Assign the papers variable to the global window object
+        window.papers = [
+          {% for paper in papers %}
+            {{ paper.to_dict() | tojson }}
+          {% if not loop.last %},{% endif %}
+          {% endfor %}
+        ];
+    </script>
+    <script src="../static/papers.js"></script>
+</body>
+</html>

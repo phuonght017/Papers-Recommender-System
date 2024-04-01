@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="../static/images/small-logo.ico">
+    <title>SciPaper | Home</title>
+    <link rel="stylesheet" type="text/css" href="../static/style.css">
+</head>
+<body>
+    <header>
+        {% include '_navbar.html' %}
+    </header>    
+    <main>
+        <div class="container">
+            <div class="left-half description">
+                <h1>Welcome to SciPaper! </h1>
+                <p>With the vast amount of academic research being published every day, finding relevant and reliable papers can be a daunting task. SciPaper simplifies this process by leveraging advanced algorithms to recommend papers that match your research interests and expertise. Save time and stay current in your field with SciPaper.</p>
+                <form id="recommendations-form" class="form">
+                    <label for="user_id"></label>
+                    <input type="text" id="user_id" name="user_id" class="id-input" placeholder="Enter user ID (0 - 11) to get recommendations">
+                    <button type="submit" class="id-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+            <div class="right-half">
+                <img src="../static/images/pic3.png" alt="Image" class="image">
+            </div>        
+        </div>        
+        <div id="error"></div>
+        <div id="interestings" class="content-container"></div>
+        <div id="recommendations" class="content-container"></div>
+    </main>
+
+    {% include '_footer.html' %}
+    <script src="../static/home.js"></script>
+</body>
+</html>

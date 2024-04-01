@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="../static/images/small-logo.ico">
+    <title>SciPaper | Authors</title>
+    <link rel="stylesheet" type="text/css" href="../static/style.css">
+</head>
+<body>
+    <header>
+        {% include '_navbar.html' %}
+    </header>
+    <main>
+        <div class="img-container">
+            <img class="author-img" src="../static/images/authors.png" alt="authors">
+        </div> 
+        <div class="table-container">
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Author</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for author in authors %}
+                    <tr>
+                        <td>{{ author.id }}</td>
+                        <td >
+                            <a href="{{ url_for('view_author', id=author.id) }}">
+                                <p> {{ author.name }} </p>
+                            </a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>     
+    </main>    
+    {% include '_footer.html' %}
+</body>
+</html>
