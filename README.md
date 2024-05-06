@@ -8,7 +8,7 @@ Tasks during the work process include: -
 * Testing the recommender system.
 ## GNN Recommender System
 Based on the results of analysis and comparison, GNN (Graph neural network) was chosen to build the recommender system. Specifically, in this project, the LightGCN algorithm is implemented thanks to its simplicity in structure, helping to reduce the amount of computation needed to increase model training performance.
-Dataset used to train the model: [Author_Cite_Paper.csv] (https://github.com/phuonght017/Papers-Recommender-System/blob/main/data/Author_Cite_Paper.csv)
+Dataset used to train the model: [Author_Cite_Paper.csv](https://github.com/phuonght017/Papers-Recommender-System/blob/main/data/Author_Cite_Paper.csv)
 This file contains interaction data between researchers and papers, specifically author citations of a paper. Each sample includes 3 features:-
 * author_id
 * paper_id
