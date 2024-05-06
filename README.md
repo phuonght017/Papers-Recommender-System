@@ -1,7 +1,7 @@
 # Papers Recommender System
 ## Introduction
 This repository contains code for a scientific papers recommender system. The main purpose of this system is to provide users with access to a large number of scientific articles and, within these articles, to find articles that are truly relevant to their field of research and interests. 
-Tasks during the work process include: -
+Tasks during the work process include: 
 * Performing an analysis of solutions for recommending papers;
 * Training and evaluating the recommender model;
 * Designing and implementing a web-app interface for the system;
@@ -9,7 +9,7 @@ Tasks during the work process include: -
 ## GNN Recommender System
 Based on the results of analysis and comparison, GNN (Graph neural network) was chosen to build the recommender system. Specifically, in this project, the LightGCN algorithm is implemented thanks to its simplicity in structure, helping to reduce the amount of computation needed to increase model training performance.
 Dataset used to train the model: [Author_Cite_Paper.csv](https://github.com/phuonght017/Papers-Recommender-System/blob/main/data/Author_Cite_Paper.csv)
-This file contains interaction data between researchers and papers, specifically author citations of a paper. Each sample includes 3 features:-
+This file contains interaction data between researchers and papers, specifically author citations of a paper. Each sample includes 3 features:
 * author_id
 * paper_id
 * year_citation
